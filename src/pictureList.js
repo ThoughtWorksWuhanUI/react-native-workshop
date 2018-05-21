@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, Image, TouchableWithoutFeedback, Alert } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, TouchableWithoutFeedback, Alert, ScrollView } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import Swiper from 'react-native-swiper';
 import { COLOR } from './constants/styleGuide';
@@ -66,7 +66,7 @@ export default class PictureList extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Swiper activeDotColor={COLOR.BLUE}>
+        <Swiper activeDotColor={COLOR.BLUE} width={SCREEN_WIDTH}>
           {DEFAULT_IMAGES.map((uri) => (
             <TouchableWithoutFeedback key={uri} onPress={() => this.goHowOld(uri)}>
               <View style={styles.slide}>
